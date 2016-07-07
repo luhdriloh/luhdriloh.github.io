@@ -1,40 +1,18 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var Hammer = require('hammerjs');
+// var jsonfile = require('jsonfile');
 
 var hammer_area = document.getElementById("hammer_time");
 var hammer_time = new Hammer(hammer_area);
 
-var data = [
-    {
-        image: 'http://free.bridal-shower-themes.com/img/c/u/cute-black-baby-pug_1.jpg',
-        name: 'bob',
-        gender: 'hemaphrodite',
-        availability: 'breakfast/lunch',
-        department: 'asshat department'
-    },
-    {
-        image: 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-ICGPGkNuB3w%2FUmmPC4pjVGI%2FAAAAAAAAAjE%2Fmqc7-Q-z-KA%2Fs1600%2FOne%2BSad%2BPug%2BIn%2B21%2BAdorable%2BHats%2B(7).jpg&f=1',
-        name: 'john',
-        gender: 'male',
-        availability: 'lunch',
-        department: 'dick face department'
-    },
-    {
-        image: 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2F25.media.tumblr.com%2Ftumblr_m4wa3k8i1u1rpwcoeo1_500.jpg&f=1',
-        name: 'hannah',
-        gender: 'femail',
-        availability: 'lunch',
-        department: 'fucktard department'
-    },
-    {
-        image: 'https://images.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-5Ze9TtFA8zo%2FUOQ5djAS6mI%2FAAAAAAAAPi4%2F87Uu3T4KRNQ%2Fs1600%2Fmiley.jpg&f=1',
-        name: 'katie',
-        gender: 'femail',
-        availability: 'breakfast',
-        department: 'nice ass department'
-    },
+// var file = './data.json';
+var data = JSON.parse(mydatas);
 
-];
+// var obj = {name: 'JP'}
+ 
+// jsonfile.writeFile(file, obj, function (err) {
+//   console.error(err)
+// })
 
 document.getElementById("no").addEventListener("click", insertData);
 document.getElementById("yes").addEventListener("click", insertData);
@@ -56,9 +34,6 @@ function insertData() {
 
     var gender = document.getElementById('gender');
     gender.innerHTML = info['gender'];
-
-    var availability = document.getElementById('availability');
-    availability.innerHTML = info['availability'];
 
     var department = document.getElementById('department');
     department.innerHTML = info['department'];
